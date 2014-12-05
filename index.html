@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js sidebar-large lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js sidebar-large lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js sidebar-large lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js sidebar-large"><!--<![endif]-->
+
+<head>
+    <!-- BEGIN META SECTION -->
+    <meta charset="utf-8">
+    <title>StudentHub - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="" name="description" />
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <!-- END META SECTION -->
+    <!-- BEGIN MANDATORY STYLE -->
+    <link href="assets/css/icons/icons.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/plugins.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/colors/color-dark.css" rel="stylesheet" type="text/css" id="theme-color">
+    <!-- END  MANDATORY STYLE -->
+    <!-- BEGIN PAGE LEVEL STYLE -->
+    <link href="assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+    <link href="assets/plugins/metrojs/metrojs.css" rel="stylesheet">
+    <!-- END PAGE LEVEL STYLE -->
+    <script src="assets/plugins/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+
+<body data-page="dashboard">
+    <!-- BEGIN TOP MENU -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidebar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="menu-medium" class="sidebar-toggle tooltips">
+                    <i class="fa fa-outdent"></i>
+                </a>
+                <a class="navbar-brand" href="index.html"></a>
+            </div>
+            <div class="navbar-center">Dashboard</div>
+            <div class="navbar-collapse collapse">
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <ul class="nav navbar-nav pull-right header-menu">
+                    <!-- BEGIN NOTIFICATION DROPDOWN -->
+                    <li class="dropdown" id="notifications-header">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="glyph-icon flaticon-notifications"></i>
+                            <span class="badge badge-danger badge-header">6</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header clearfix">
+                                <p class="pull-left">Notifications</p>
+                            </li>
+                            <li>
+                                <ul class="dropdown-menu-list withScroll" data-height="220">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-star p-r-10 f-18 c-orange"></i>
+                                            Steve have rated your photo
+                                            <span class="dropdown-time">Just now</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-heart p-r-10 f-18 c-red"></i>
+                                            John added you to his favs
+                                            <span class="dropdown-time">15 mins</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-file-text p-r-10 f-18"></i>
+                                            New document available
+                                            <span class="dropdown-time">22 mins</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-picture-o p-r-10 f-18 c-blue"></i>
+                                            New picture added
+                                            <span class="dropdown-time">40 mins</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bell p-r-10 f-18 c-orange"></i>
+                                            Meeting in 1 hour
+                                            <span class="dropdown-time">1 hour</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-bell p-r-10 f-18"></i>
+                                            Server 5 overloaded
+                                            <span class="dropdown-time">2 hours</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-comment p-r-10 f-18 c-gray"></i>
+                                            Bill comment your post
+                                            <span class="dropdown-time">3 hours</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-picture-o p-r-10 f-18 c-blue"></i>
+                                            New picture added
+                                            <span class="dropdown-time">2 days</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-footer clearfix">
+                                <a href="#" class="pull-left">See all notifications</a>
+                                <a href="#" class="pull-right">
+                                    <i class="fa fa-cog"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END NOTIFICATION DROPDOWN -->
+                    <!-- BEGIN MESSAGES DROPDOWN -->
+                    <li class="dropdown" id="messages-header">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="glyph-icon flaticon-email"></i>
+                            <span class="badge badge-primary badge-header">
+                             8
+                        </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header clearfix">
+                                <p class="pull-left">
+                                    Messages
+                                </p>
+                            </li>
+                            <li class="dropdown-body">
+                                <ul class="dropdown-menu-list withScroll" data-height="220">
+                                    <li class="clearfix">
+                                        <span class="pull-left p-r-5">
+                                            <img src="assets/img/avatars/avatar3.png" alt="avatar 3">
+                                        </span>
+                                        <div class="clearfix">
+                                            <div>
+                                                <strong>Alexa Johnson</strong> 
+                                                <small class="pull-right text-muted">
+                                                    <span class="glyphicon glyphicon-time p-r-5"></span>12 mins ago
+                                                </small>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="pull-left p-r-5">
+                                            <img src="assets/img/avatars/avatar4.png" alt="avatar 4">
+                                        </span>
+                                        <div class="clearfix">
+                                            <div>
+                                                <strong>John Smith</strong> 
+                                                <small class="pull-right text-muted">
+                                                    <span class="glyphicon glyphicon-time p-r-5"></span>47 mins ago
+                                                </small>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="pull-left p-r-5">
+                                            <img src="assets/img/avatars/avatar5.png" alt="avatar 5">
+                                        </span>
+                                        <div class="clearfix">
+                                            <div>
+                                                <strong>Bobby Brown</strong> 
+                                                <small class="pull-right text-muted">
+                                                    <span class="glyphicon glyphicon-time p-r-5"></span>1 hour ago
+                                                </small>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        </div>
+                                    </li>
+                                    <li class="clearfix">
+                                        <span class="pull-left p-r-5">
+                                            <img src="assets/img/avatars/avatar6.png" alt="avatar 6">
+                                        </span>
+                                        <div class="clearfix">
+                                            <div>
+                                                <strong>James Miller</strong> 
+                                                <small class="pull-right text-muted">
+                                                    <span class="glyphicon glyphicon-time p-r-5"></span>2 days ago
+                                                </small>
+                                            </div>
+                                            <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-footer clearfix">
+                                <a href="mailbox.html" class="pull-left">See all messages</a>
+                                <a href="#" class="pull-right">
+                                    <i class="fa fa-cog"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- END MESSAGES DROPDOWN -->
+                    <!-- BEGIN USER DROPDOWN -->
+                    <li class="dropdown" id="user-header">
+                        <a href="#" class="dropdown-toggle c-white" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <img src="assets/img/avatars/avatar2.png" alt="user avatar" width="30" class="p-r-5">
+                            <span id="userName" class="username">
+                            
+                            </span>
+                            <i class="fa fa-angle-down p-r-10"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="profile.html">
+                                    <i class="glyph-icon flaticon-account"></i> My Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="profile_edit.html">
+                                    <i class="glyph-icon flaticon-settings21"></i> Account Settings
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#logout"  id="logoutButton"   title="Logout">
+                                    <i class="fa fa-power-off"></i><span class="sidebar-text"> Logout </span>
+                                </a>
+                              
+                            </li>	
+                            
+
+                        </ul>
+                    </li>
+                    <!-- END USER DROPDOWN -->
+   
+                </ul>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+        </div>
+    </nav>
+    <!-- END TOP MENU -->
+    <!-- BEGIN WRAPPER -->
+    <div id="wrapper">
+<!-- BEGIN MAIN SIDEBAR -->
+        <nav id="sidebar">
+            <div id="main-menu">
+                <ul class="sidebar-nav">
+                    <li class="current">
+                        <a href="index.html"><i class="fa fa-dashboard"></i><span class="sidebar-text">Dashboard</span></a>
+                    </li>
+                    <li>
+                    <a href="#"><i class="glyph-icon flaticon-shopping80"></i><span class="sidebar-text">College Course</span>
+                        <span class="fa arrow"></span></a>
+                        <ul class="submenu collapse">
+                            <li>
+                                <a href="course_info.html"><span class="sidebar-text">View Course</span></a>
+                            </li>     
+                            <li>
+                                <a href="course_module_add.html"><span class="sidebar-text">Add Modules</span></a>
+                            </li>                                                  
+                        </ul>
+                    </li>
+ 
+                    <li>
+                        <a href="#"><i class="fa fa-edit"></i><span class="sidebar-text">Assessments</span><span class="fa arrow"></span></a>
+                        <ul class="submenu collapse">
+                            <li>
+                                <a href="view_assessments.html"><span class="sidebar-text">View Assessments</span></a>
+                            </li>
+                            <li>
+                                <a href="add_assessments.html"><span class="sidebar-text">Add Assessments</span></a>
+                            </li>
+                    </li>
+                        </ul>
+
+                    <li>
+                        <a href="#"><i class="fa fa-clock-o"></i><span class="sidebar-text">TimeTables</span>
+                        <span class="fa arrow"></span></a>
+                        <ul class="submenu collapse">
+                            <li>
+                                <a href="class_timetable.html"><span class="sidebar-text">Class Timetable</span></a>
+                            </li>
+                            <li>
+                                <a href="academic_calender.html"><span class="sidebar-text">Academic Calender</span></a>
+                            </li>
+                            <li>
+                                <a href="exam_timetable.html"><span class="sidebar-text">Exam Timetable</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-pencil"></i><span class="sidebar-text">Grade Tracker</span>
+                            <span class="fa arrow"></span></a>
+                            <ul class="submenu collapse">
+                            <li>
+                                <a href="view_grades.html" data-style="dark" class="theme-color"><span class="sidebar-text">View Grades</span></a>
+                            </li>
+                            <li>
+                                <a href="add_grades.html" data-style="light" class="theme-color"><span class="sidebar-text">Add New Grade</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="mailbox.html"><i class="glyph-icon flaticon-email"></i><span class="sidebar-text">Student Email</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-calendar"></i><span class="sidebar-text">Calender</span></a>
+    
+                    </li>
+                    <li>
+                        <a href="events.html"><i class="fa fa-bell"></i><span class="sidebar-text">Events</span></a>
+                    </li>                    
+                    <li>
+						<a href="todo_list.html"><i class="fa fa-list"></i><span class="sidebar-text">To-Do List</span></a>
+
+                    </li>
+                    <li>
+                        <a href="#"><i class="glyph-icon flaticon-ui-elements2"></i><span class="sidebar-text">College Links</span><span class="fa arrow"></span></a>
+                        <ul class="submenu collapse">
+                            <li>
+                                <a href="components.html"><span class="sidebar-text">Student Portal</span></a>
+                            </li>
+                            <li>
+                                <a href="animations.html"><span class="sidebar-text">Moodle Portal</span></a>
+                            </li>
+                            <li> 
+                                <a href="buttons.html"><span class="sidebar-text">Student Email</span></a>
+                            </li>
+                            <li> 
+                                <a href="icons.html"><span class="sidebar-text">Manage Links</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-envelope"></i><span class="sidebar-text">Messaging</span><span class="fa arrow"></span></a>
+                    </li>                    
+                    <li>
+                        <a href="#"><i class="glyph-icon flaticon-pages"></i><span class="sidebar-text">Contacts</span><span class="fa arrow"></span>
+                           
+                        </a>
+                        <ul class="submenu collapse">
+                            <li>
+                                <a href="view_contacts.html"><span class="sidebar-text">View Contacts</span></a>
+                            </li>
+                            <li>
+                                <a href="manage_contacts.html"><span class="sidebar-text">Manage Contacts<span class="label label-dark pull-right">New</span></span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="#"><i class="glyph-icon flaticon-account"></i><span class="sidebar-text">Account</span><span class="fa arrow"></span></a>
+                          <ul class="submenu collapse">
+                            <li>
+                                <a href="profile.html"><span class="sidebar-text">View Profile</span></a>
+                            </li>
+                            <li>
+                                <a href="profile_edit.html"><span class="sidebar-text">Edit Profile</span></a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                            <li>
+                                <a href="#logout"  id="logoutButton"   title="Logout">
+                                    <i class="fa fa-power-off"></i> Logout
+                                </a>
+                              
+                            </li>				
+
+                    
+                </ul>
+            </div>
+          </nav>
+        <!-- END MAIN SIDEBAR -->
+
+        <!-- BEGIN MAIN CONTENT -->
+        <div id="main-content" class="dashboard">
+            <div class="row m-t-20">
+                <div class="col-md-3 col-sm-12">
+                    <div class="panel no-bd bd-3 panel-stat">
+                        <div class="panel-body bg-blue p-15">
+                            <div class="row m-b-10">
+                                <div class="col-xs-3">
+                                    <i class="glyph-icon flaticon-educational"></i>
+                                </div>
+                                <div class="col-xs-9">
+                                  <div class="live-tile" data-mode="carousel" data-direction="vertical" data-delay="3500" data-height="56">
+                                        <div>
+                                            <small class="stat-title">Current Assesments</small>
+                                            <h1 class="m-0 w-300">10</h1>
+                                        </div>
+                                        <div>
+                                            <small class="stat-title">Total Assesments</small>
+                                            <h1 class="m-0 w-300">68</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Uncompleted</small>
+                                  <div class="live-tile" data-mode="carousel" data-direction="vertical" data-delay="3500" data-height="30">
+                                        <div>
+                                            <h3 class="m-0 w-300">20.00%</h3>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Completed</small>
+                                  <div class="live-tile" data-mode="carousel" data-direction="vertical" data-delay="3500" data-height="30">
+                                        <div>
+                                            <h3 class="m-0 w-500">80.00%</h3>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="panel no-bd bd-3 panel-stat">
+                        <div class="panel-body bg-red p-15">
+                            <div class="row m-b-6">
+                                <div class="col-xs-3">
+                                    <i class="glyph-icon flaticon-educational"></i>
+                                </div>
+                                <div class="col-xs-9">
+                                    <small class="stat-title">Reminders</small>
+                                    <h1 class="m-0 w-500">5 <small style="color:white;">Alerts</small></h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Current</small>
+                                    <h3 class="m-0 w-500">5</h3>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Total</small>
+                                    <h3 class="m-0 w-500">21</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="panel no-bd bd-3 panel-stat">
+                        <div class="panel-body bg-green p-15">
+                            <div class="row m-b-0">
+                                <div class="col-xs-3">
+                                    <i class="glyph-icon flaticon-educational"></i>
+                                </div>
+                                <div class="col-xs-9">
+                                    <small class="stat-title">Grade Tracker</small>
+                                  <div class="live-tile" data-height="47">
+                                        <div>
+                                            <h1 class="m-0 w-500 bg-green">40 <small style="color:white;">Grades</small></h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Average</small>
+                                  <div class="live-tile" data-height="30">
+                                        <div class="bg-green">
+                                            <h3 class="m-0 w-500">89.00%</h3>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Average</small>
+                                  <div class="live-tile" data-height="30">
+                                        <div class="bg-green">
+                                            <h3 class="m-0 w-500">89.00%</h3>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12" >
+                    <div class="panel no-bd bd-3 panel-stat">
+                        <div class="panel-body bg-dark p-15">
+                            <div class="row m-b-6">
+                                <div class="col-xs-3">
+                                    <i class="glyph-icon flaticon-educational"></i>
+                                </div>
+                                <div class="col-xs-9">
+                                    <small class="stat-title">Modules</small>
+                                    <h1 class="m-0 w-500"><span class="animate-number">  3 <small style="color:white;">Modules</small></span></h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Enrolled</small>
+                                    <h3 class="m-0 w-500"><span class="animate-number" data-value="13" >0</span></h3>
+                                </div>
+                                <div class="col-xs-6">
+                                    <small class="stat-title">Total</small>
+                                    <h3 class="m-0 w-500"><span class="animate-number" data-value="23"></span></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+            </div>
+          <div class="row">
+                <div class="col-md-4">
+                    <div class="panel no-bd bg-green">
+                        <div class="panel-heading clearfix pos-rel">
+                            <div class="pos-abs t-10 l-15 f-18"><i class="fa fa-list"></i>
+                            </div>
+                            <h2 class="panel-title width-100p text-center w-500 f-20 carrois">To Do List</h2>
+                            <div class="pos-abs t-10 r-5 f-18 cursor-pointer">
+                                <div class="glyph-icon flaticon-plus16 f-32"></div>
+                            </div>
+                        </div>
+                        <div class="panel-body bg-green p-t-0 p-b-10">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row m-b-10">
+                                        <input class="form-control" id="new-todo" placeholder="What needs to be done?" type="text"/>
+                                    </div>
+                                    <div class="row" id="task-manager">
+                                        <div class="task-actions clearfix">
+                                   
+   
+                                        </div>
+                                        <ul id="sortable-todo">
+
+                
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <div id="todo-stats"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix pos-rel">
+                            <div class="pos-abs t-10 l-15 f-18 c-gray"><i class="fa fa-search"></i>
+                            </div>
+                            <h2 class="panel-title width-100p c-blue text-center w-500 f-20 carrois">Contact</h2>
+                            <div class="pos-abs t-10 r-5 f-18 c-blue cursor-pointer">
+                                <div class="glyph-icon flaticon-plus16 f-32"></div>
+                            </div>
+                        </div>
+                        <div class="panel-body messages">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div id="contactPanel" class="withScroll" data-height="360">
+                                        
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <div class="panel-heading clearfix pos-rel">
+                      <div class="pos-abs top-12 l-15 f-18 c-gray"><i class="fa fa-comments-o"></i> </div>
+                      <h2 class="panel-title width-100p c-red text-center w-500 f-20 carrois">Email</h2>
+                      <div class="pos-abs t-10 r-5 f-18 c-red cursor-pointer">
+                        <div class="glyph-icon flaticon-plus16 f-32"></div>
+                      </div>
+                    </div>
+                    <div class="panel-body messages">
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                          <div id="emailPanel" class="withScroll" data-height="360"> 
+                              
+                              
+
+                             </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+            <div class="row" >
+                
+                <div class="col-lg-12 m-b-20" >
+                    <div class="modal fade" id="event-modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title"><strong>Manage</strong> my events</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-success save-event">Create event</button>
+                                    <button type="button" class="btn btn-danger delete-event" data-dismiss="modal">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="external-events" class="bg-white row m-0">
+
+                        <div class="col-md-12 no-bd">
+                            <div class="widget bg-white">
+                                <div class="widget-body p-b-0">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div id="calendar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- END MAIN CONTENT -->
+
+    </div>
+    <!-- END WRAPPER -->
+    <script type="text/javascript">
+        $( "#logoutButton" ).click(function() {  
+                $('#logoutButton').load("assets/php/logout.php", function () {
+                window.location.href = "login.html";
+                });                    
+    });
+        $( "#logoutButton2" ).click(function() {  
+                $('#logoutButton').load("assets/php/logout.php", function () {
+                window.location.href = "login.html";
+                });                    
+    }); 
+    $('#userName').load("assets/php/sessionName.php", function () {
+
+    });        
+    </script>  
+    <!-- BEGIN MANDATORY SCRIPTS -->
+    <script src="assets/plugins/mandatoryJs.min.js"></script>
+    <script src="assets/js/config.js"></script>
+    <!-- END MANDATORY SCRIPTS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="assets/plugins/metrojs/metrojs.min.js"></script>
+    <script src='assets/plugins/fullcalendar/moment.min.js'></script>
+    <script src='assets/plugins/fullcalendar/fullcalendar.min.js'></script>
+    <script src="assets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script src="assets/js/calendar.js"></script>
+    <!-- END  PAGE LEVEL SCRIPTS -->
+    <script src="assets/js/application.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+
+</html>
